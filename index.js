@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/', require('./routes/add-position'));
-app.use('/', require('./routes/add-checkin'));
+app.use('/', require('./routes/add-stop'));
 
 app.listen(process.env.port || 4000, function(){
 	console.log('now listening for requests');

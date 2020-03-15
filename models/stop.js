@@ -6,7 +6,8 @@ const posSchema = new Schema({
         type: String
     },
     date: {
-        type: Date
+        type: Date,
+        default: Date.now
     },
     lat: {
         type: Number
@@ -19,6 +20,16 @@ const posSchema = new Schema({
     },
     company: {
         type: String
+    },
+    checkinTime: {
+        type: Date,
+        default : Date.now
+    },
+    checkoutTime: {
+        type: Date,
+    },
+    status: {
+        type: Boolean
     }
 }); 
 
