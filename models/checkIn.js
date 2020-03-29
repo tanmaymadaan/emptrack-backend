@@ -21,6 +21,9 @@ const posSchema = new Schema({
     company: {
         type: String
     },
+    purpose: {
+        type: String
+    },  
     checkinTime: {
         type: Date,
         default : Date.now

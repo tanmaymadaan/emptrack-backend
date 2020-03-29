@@ -35,5 +35,5 @@ const posSchema = new Schema({
     }
 }); 
 
-const User = mongoose.model('user', posSchema);
+const User = mongoose.model('position', posSchema);
 module.exports = User;
