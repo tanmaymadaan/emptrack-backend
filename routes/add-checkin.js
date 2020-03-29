@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/stop');
+const User = require('../models/checkIn');
 
 router.post('/checkIn', function (req, res, next) {
   // console.log(req.body);
