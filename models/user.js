@@ -10,6 +10,18 @@ const userSchema = new Schema({
     },
     passCode: {
         type: Number
+    },
+    currCheckIn: {
+        type: String
+    },
+    loginStatus: {
+        type: String
+    },
+    swipeStatus: {
+        type: String
+    },
+    checkInStatus: {
+        type: String
     }
 });
 

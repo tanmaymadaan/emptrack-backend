@@ -33,6 +33,9 @@ const posSchema = new Schema({
     },
     status: {
         type: Boolean
+    },
+    remarks: {
+        type: String
     }
 }); 
 

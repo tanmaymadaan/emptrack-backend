@@ -14,6 +14,7 @@ router.post('/login', function (req, res, next) {
         else {
             console.log(result);
             res.send(result);
+            User.findOneAndUpdate({ uid: res.uid}, { loginStatus:  true});
         }
     }).catch(next);
 });

@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', require('./routes/add-position'));
 app.use('/', require('./routes/add-checkin'));
-app.use('/', require('./routes/login'));
+app.use('/', require('./routes/userAuth'));
+app.use('/', require('./routes/image-upload'));
 
 app.listen(process.env.port || 4000, function(){
 	console.log('now listening for requests');
