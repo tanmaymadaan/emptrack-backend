@@ -14,9 +14,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/', require('./routes/add-position'));
-app.use('/', require('./routes/add-checkin'));
+app.use('/', require('./routes/checkin'));
 app.use('/', require('./routes/userAuth'));
 app.use('/', require('./routes/image-upload'));
+app.use('/', require('./routes/get-users'));
+app.use('/', require('./routes/swipe'));
 
 app.listen(process.env.port || 4000, function(){
 	console.log('now listening for requests');

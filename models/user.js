@@ -22,6 +22,15 @@ const userSchema = new Schema({
     },
     checkInStatus: {
         type: String
+    },
+    role: {
+        type: String
+    },
+    manager: {
+        type: String
+    },
+    uid: {
+        type: String
     }
 });
 

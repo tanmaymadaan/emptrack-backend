@@ -9,12 +9,12 @@ router.post('/checkIn', function (req, res, next) {
   // res.send(req.body);
   console.log(req.body);
   req.body.status = true;
-  checkIn.create(req.body).then(function (pos) {
-    res.send(pos);
+  checkIn.create(req.body).then(result =>  {
+    user.findOneAndUpdate({ uid: req.body.uid}, {currCheckIn: req.body.company, checkInStatus: 'true'}).then((result) => {
+      res.send(pos);
+    });
   }).catch(next);
-  user.findOneAndUpdate({ userId: req.body.id}, {currCheckIn: req.body.company, checkInStatus: 'true'}).then(function(pos) {
-    res.send(pos);
-  }).catch(next);
+  
 
   // console.log(req.params.id);
   // User.find({userId: req.params.id, status: true}).then(function(pos){
@@ -23,10 +23,10 @@ router.post('/checkIn', function (req, res, next) {
 });
 
 router.post('/checkOut', (req, res, next) => {
-  console.log(req.body.id);
+  console.log(req.body.uid);
   console.log(req.body.remarks);
-  checkIn.findOneAndUpdate({ userId: req.body.id, status: true }, {status: false, checkoutTime: Date.now(), remarks: req.body.remarks}).then(function (pos) {
-    res.send(pos);
+  checkIn.findOneAndUpdate({ uid: req.body.uid, status: true }, {status: false, checkoutTime: Date.now(), remarks: req.body.remarks}).then((result) => {
+    res.send(result);
   }).catch(next);
   
 });

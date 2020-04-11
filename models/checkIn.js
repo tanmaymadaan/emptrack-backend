@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const posSchema = new Schema({
-    userId: {
+    uid: {
         type: String
     },
     date: {
