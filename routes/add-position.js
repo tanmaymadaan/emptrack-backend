@@ -3,11 +3,11 @@ const router = express.Router();
 
 const User = require('../models/position');
 
-router.post('/add-position', function (req, res, next) {
+router.post('/add-position', (req, res, next) => {
   // console.log(req.body);
   // res.send(req.body);
   console.log(req.body);
-  User.create(req.body).then(function (pos) {
+  User.create(req.body).then((pos) => {
     res.send(pos);
   }).catch(next);
 

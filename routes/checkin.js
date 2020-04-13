@@ -31,4 +31,13 @@ router.post('/checkOut', (req, res, next) => {
   
 });
 
+router.get('/get-check-ins/:uid', (req, res, next) => {
+  console.log("GET CHECKINS");
+  console.log(req.params.uid);
+  checkIn.find({ uid: req.params.uid }).then((checkins) => {
+    res.send(checkins);
+  }).catch(next);
+
+});
+
 module.exports = router;
